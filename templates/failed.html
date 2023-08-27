@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include 'header.html' %}
 
-</body>
-</html>
+<div class="failed-content">
+    <h1 class="failed-header">Oops 🙄</h1>
+    <h3 class="failed-subheader">We couldn't find the name of the city.</h3>
+    <h3 class="failed-subheader nr2">Or the Latitude and Longitude!</h3>
+    <a href="{{ url_for('home') }}">Try another one?</a>
+</div>
+{% include 'footer.html' %}

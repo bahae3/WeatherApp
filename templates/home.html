@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include 'header.html' %}
 
-</body>
-</html>
+<div class="home-container">
+    <h2 class="home-title">We have the weather of all the cities!</h2>
+    <form action="{{ url_for('home') }}" method="post">
+        {{ form.csrf_token }}
+        <div>
+            <label>{{ form.city.label }}</label>
+            {{ form.city() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</div>
+
+
+{% include 'footer.html' %}

@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include 'header.html' %}
 
-</body>
-</html>
+<div class="success-content">
+    <h1 class="success-header">The forecast in {{ city }}, {{ country }} is:</h1>
+    <h2 class="success-subheader">{{ temperature }} °C</h2>
+
+    <div class="condition-element">
+        <img src="{{ weather_icon }}" alt="weather-icon">
+        <h3 class="success-smallhead">{{ weather_condition }}</h3>
+    </div>
+    <a href="{{ url_for('home') }}">Another city?</a>
+</div>
+{% include 'footer.html' %}
