@@ -1,7 +1,7 @@
 import requests
 from flask import Flask, render_template, url_for, redirect, session
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
 
 app = Flask(__name__)
@@ -11,6 +11,11 @@ app.config['SECRET_KEY'] = 'bahae03'
 class CityName(FlaskForm):
     city = StringField("The city name: ", validators=[DataRequired()])
     submit = SubmitField("Submit")
+
+
+class ContactUs(FlaskForm):
+    send_us_msg = TextAreaField("Type in your message:", validators=[DataRequired()])
+    send = SubmitField("Send 📩")
 
 
 API_URL = 'https://api.weatherapi.com/v1/current.json'
@@ -53,9 +58,10 @@ def ourteam():
     return render_template("ourteam.html")
 
 
-@app.route("/contactus")
+@app.route("/contactus", methods=['POST', 'GET'])
 def contactus():
-    return render_template("contactus.html")
+    form = ContactUs()
+    return render_template("contactus.html", form=form)
 
 
 @app.route("/aboutus")
