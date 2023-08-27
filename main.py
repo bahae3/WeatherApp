@@ -13,6 +13,12 @@ class CityName(FlaskForm):
     submit = SubmitField("Submit")
 
 
+class LatAndLong(FlaskForm):
+    latitude = StringField("Latitude: ", validators=[DataRequired()])
+    longitude = StringField("Longitude: ", validators=[DataRequired()])
+    submit = SubmitField("Submit")
+
+
 class ContactUs(FlaskForm):
     send_us_msg = TextAreaField("Type in your message:", validators=[DataRequired()])
     send = SubmitField("Send 📩")
@@ -24,24 +30,42 @@ API_KEY = '8caf0227291b44ef9b4121126232608'
 
 @app.route("/", methods=['POST', 'GET'])
 def home():
-    form = CityName()
-    if form.validate_on_submit():
-        city = form.data.get('city')
+    city_form = CityName()
+    lat_and_long_form = LatAndLong()
+    if city_form.validate_on_submit():
+        city = city_form.data.get('city')
         response = requests.get(f"{API_URL}?key={API_KEY}&q={city.capitalize()}").json()
         session['city_data'] = response
         return redirect(url_for('success'))
-    return render_template('home.html', form=form)
+    elif lat_and_long_form.validate_on_submit():
+        latitude = round(float(lat_and_long_form.data.get('latitude')), 4)
+        longitude = round(float(lat_and_long_form.data.get('longitude')), 4)
+        response = requests.get(f"{API_URL}?key={API_KEY}&q={latitude},{longitude}").json()
+        session['lat_and_long'] = response
+        return redirect(url_for('success'))
+    return render_template('home.html', form1=city_form, form2=lat_and_long_form)
 
 
 @app.route("/success")
 def success():
     city_data = session.get('city_data')
+    l_data = session.get('lat_and_long')
     if city_data:
         city_name = city_data['location']['name']
         country = city_data['location']['country']
         temp = city_data['current']['temp_c']
         condition = city_data['current']['condition']['text']
         condition_photo = city_data['current']['condition']['icon']
+        session['city_data'] = None
+        return render_template('success.html', city=city_name, country=country, temperature=temp,
+                               weather_condition=condition, weather_icon=condition_photo)
+    elif l_data:
+        city_name = l_data['location']['name']
+        country = l_data['location']['country']
+        temp = l_data['current']['temp_c']
+        condition = l_data['current']['condition']['text']
+        condition_photo = l_data['current']['condition']['icon']
+        session['lat_and_long'] = None
         return render_template('success.html', city=city_name, country=country, temperature=temp,
                                weather_condition=condition, weather_icon=condition_photo)
     else:

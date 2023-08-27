@@ -1,12 +1,25 @@
 {% include 'header.html' %}
 
+<h2 class="home-title">We have the weather of all the cities!</h2>
 <div class="home-container">
-    <h2 class="home-title">We have the weather of all the cities!</h2>
+    <form action="{{ url_for('home') }}" method="post" class="first-form">
+        {{ form1.csrf_token }}
+        {{ form1.city.label(class="form-label-home city") }}
+        {{ form1.city(class="form-input") }}
+        {{ form1.submit(class="btn-home") }}
+    </form>
+    <span class="or-separator">Or</span>
     <form action="{{ url_for('home') }}" method="post">
-        {{ form.csrf_token }}
-        <label class="form-label">{{ form.city.label }}</label>
-        {{ form.city(class="form-input") }}
-        {{ form.submit(class="btn") }}
+        {{ form2.csrf_token }}
+        <div class="latitude">
+            {{ form2.latitude.label(class="form-label-home") }}
+            {{ form2.latitude(class="form-input l") }}
+        </div>
+        <div class="longitude">
+            {{ form2.longitude.label(class="form-label-home") }}
+            {{ form2.longitude(class="form-input l") }}
+        </div>
+        {{ form2.submit(class="btn-home") }}
     </form>
 </div>
 
