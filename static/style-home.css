@@ -1,7 +1,7 @@
 .home-title {
     text-align: center;
     font-size: 30px;
-    margin-bottom: 20px;
+    margin: 50px 0 20px;
     font-family: 'Kanit', sans-serif;
 }
 
@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 50px 0 125px;
+    margin: 50px 0 35px;
 }
 
 .first-form{
@@ -19,12 +19,12 @@
 }
 
 .city{
-  width: 105px !important;
+  width: 126px !important;
 }
 
 .home-container form {
-    width: 300px;
-    height: 170px;
+    width: 350px;
+    height: 223px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -36,7 +36,7 @@
     font-size: 17px;
     font-weight: bold;
     font-family: 'Josefin Sans', sans-serif;
-    width: 70px;
+    width: 173px;
 }
 
 .form-input {
@@ -58,8 +58,8 @@
     cursor: pointer;
     font-size: 16px;
     text-align: center;
-    margin-left: 100px;
-    margin-top: 6px;
+    margin-left: 127px;
+    margin-top: 7px;
     transition: background-color 0.3s ease;
 }
 
@@ -82,6 +82,33 @@
 }
 
 .l{
-    width: 64%;
-    margin-left: 20px;
+    width: 50%;
+    margin-left: -24px;
+}
+
+.home-texts{
+  margin: 0 auto;
+  font-family: 'Verdana', sans-serif;
+  padding: 5px 300px;
+  line-height: 1.8;
+  margin-bottom: 65px;
+}
+
+.home-text{
+  font-size: 20px;
+}
+
+.home-contact-text{
+  font-size: 19px;
+}
+
+.home-contact {
+  padding: 2px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.home-contact:hover{
+  color: black;
+  text-decoration: underline;
 }

@@ -1,5 +1,8 @@
 {% include 'header.html' %}
 
+
+{% if weather_days|length == 1 %}
+
 <div class="success-content">
     <h1 class="success-header">The forecast in {{ city }}, {{ country }} is:</h1>
     <h2 class="success-subheader">{{ temperature }} °C</h2>
@@ -10,4 +13,22 @@
     </div>
     <a href="{{ url_for('home') }}">Another city?</a>
 </div>
+
+{% else %}
+<h1 class="success-header">The forecast in {{ city }}, {{ country }} is:</h1>
+<div class="success-weather">
+    {% for weather in weather_days["forecast"]["forecastday"] %}
+    <div class="elements-weather">
+        <p class="date">{{ weather['date'] }}</p>
+        <p class="max">🥵 {{ weather['day']['maxtemp_c'] }} °C</p>
+        <p class="min">🥶 {{ weather['day']['mintemp_c'] }} °C</p>
+        <img src="{{ weather['day']['condition']['icon'] }}" alt="weather-condition">
+        <p class="condition">{{ weather['day']['condition']['text'] }}</p>
+    </div>
+    {% endfor %}
+</div>
+<a href="{{ url_for('home') }}">Another city?</a>
+
+{% endif %}
+
 {% include 'footer.html' %}

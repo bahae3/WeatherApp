@@ -1,5 +1,6 @@
+/* Style first condition */
 .success-content{
-    margin: 46px 0 96px;
+    margin: 46px 0 87px;
 }
 
 .success-header{
@@ -9,6 +10,7 @@
 
 .success-subheader{
     text-align: center;
+    font-size: 28px;
     font-family: 'Bricolage Grotesque', sans-serif;
 }
 
@@ -25,7 +27,7 @@
 }
 
 .success-smallhead{
-    margin-left: 10px;
+    margin-left: 5px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 22px;
 }
@@ -49,4 +51,34 @@
 
 .success-content a:hover{
     background-color: #0056b3;
+}
+
+/* Style second condition */
+.success-weather{
+  display: flex;
+  justify-content: center;
+}
+
+.elements-weather{
+  margin: 10px 40px;
+  padding: 8px 24px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  min-width: 178px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: 20px;;
+}
+
+.date{
+  margin-top: 10px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 22px;
+}
+
+.condition{
+  margin: 0 0 10px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 17px;
 }
