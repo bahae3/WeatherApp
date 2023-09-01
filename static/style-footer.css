@@ -10,27 +10,27 @@ footer {
     font-size: 26px;
     margin: 10px;
     text-decoration: none;
+
+}
+
+.fa-brands{
     transition: color 0.3s ease;
 }
 
 .fa-facebook:hover {
     color: #007bff;
-    transition: color 0.3s ease;
 }
 
 .fa-instagram:hover{
     color: #f83376;
-    transition: color 0.3s ease;
 }
 
 .fa-twitter:hover{
     color: #2f9aea;
-    transition: color 0.3s ease;
 }
 
 .fa-snapchat:hover{
     color: #fffb00;
-    transition: color 0.3s ease;
 }
 
 

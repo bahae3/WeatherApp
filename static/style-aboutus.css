@@ -1,5 +1,5 @@
 .about-section {
-    padding: 50px 0;
+    padding: 35px 0;
     text-align: center;
 }
 
@@ -11,7 +11,7 @@
 .about-content h2 {
   font-family: 'Kanit', sans-serif;
   text-decoration: underline;
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 

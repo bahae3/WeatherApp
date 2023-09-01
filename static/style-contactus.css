@@ -1,11 +1,11 @@
 .contactus-container {
     text-align: center;
-    margin: 40px 0 80px;
+    margin: 50px 0 66px;
     background-color: #f9f9f9;
 }
 
 .contactus-title{
-  font-size: 28px;
+  font-size: 30px;
   text-decoration: underline;
   font-family: 'Kanit', sans-serif;
   letter-spacing: 1px;
@@ -35,6 +35,8 @@
     border-radius: 5px;
     font-size: 16px;
     max-width: 451px;
+    min-height: 127px;
+    max-height: 127px;
 }
 
 .btn {

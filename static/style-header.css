@@ -13,10 +13,6 @@ nav{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav a{
-    padding: 15px 0 0 45px;
-}
-
 nav a img{
     width: 122px;
     height: auto;
@@ -32,6 +28,7 @@ nav ul{
 
 nav ul li {
     margin: 0;
+    padding: 15px 0 0 45px;
 }
 
 nav ul li a{
@@ -39,10 +36,9 @@ nav ul li a{
     color: #333;
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 23px;
+    transition: color 0.2s ease;
 }
 
 nav ul li a:hover {
     color: #007bff;
-    /* font-weight: bold; */
-    transition: color 0.2s ease;
 }
