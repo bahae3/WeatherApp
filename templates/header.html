@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Styling all the pages, each -->
+    <link rel="stylesheet" href="static/style-home.css">
+    <link rel="stylesheet" href="static/style-success.css">
+    <link rel="stylesheet" href="static/style-failed.css">
+    <link rel="stylesheet" href="static/style-header.css">
+    <link rel="stylesheet" href="static/style-footer.css">
+    <link rel="stylesheet" href="static/style-aboutus.css">
+    <link rel="stylesheet" href="static/style-contactus.css">
+    <link rel="stylesheet" href="static/style-ourteam.css">
+    <!--The favicon photo-->
+    <link rel="shortcut icon" href="static/icon/weather_icon.png" type="image/x-icon">
+    <!-- The icons were taken from Font Awesome -->
+    <script src="https://kit.fontawesome.com/a7aad111ea.js" crossorigin="anonymous"></script>
+    <!-- The font families from here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300;10..48,600&family=Josefin+Sans:wght@300&family=Kanit:wght@500&display=swap"
+          rel="stylesheet">
+    <title>Weather App</title>
+</head>
+<body>
+<nav>
+    <a href="{{ url_for('home') }}"><img src="static/photow.png" alt="weather-img"></a>
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('ourteam') }}">Our Team</a></li>
+        <li><a href="{{ url_for('contactus') }}">Contact Us</a></li>
+        <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+    </ul>
+</nav>
+

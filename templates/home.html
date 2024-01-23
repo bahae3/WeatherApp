@@ -1,0 +1,46 @@
+{% include 'header.html' %}
+
+<h2 class="home-title">We have the weather of all the cities!</h2>
+<div class="home-container">
+    <form action="{{ url_for('home') }}" method="post" class="first-form">
+        {{ form1.csrf_token }}
+        {{ form1.city.label(class="form-label-home city") }}
+        {{ form1.city(class="form-input") }}
+        {{ form1.days.label(class="form-label-home city") }}
+        {{ form1.days(class="form-input") }}
+        {{ form1.submit(class="btn-home") }}
+    </form>
+    <span class="or-separator">Or</span>
+    <form action="{{ url_for('home') }}" method="post">
+        {{ form2.csrf_token }}
+        <div class="latitude">
+            {{ form2.latitude.label(class="form-label-home") }}
+            {{ form2.latitude(class="form-input l") }}
+        </div>
+        <div class="longitude">
+            {{ form2.longitude.label(class="form-label-home") }}
+            {{ form2.longitude(class="form-input l") }}
+        </div>
+        <div class="longitude">
+            {{ form2.days.label(class="form-label-home") }}
+            {{ form2.days(class="form-input l") }}
+        </div>
+        {{ form2.submit(class="btn-home") }}
+    </form>
+</div>
+
+<div class="home-texts">
+    <p class="home-text">
+        Discover accurate weather forecasts at your fingertips with our Weather App. Created by a
+        computer science student with a passion for meteorology, our app provides real-time weather updates, helping you
+        plan your days effectively. From current conditions to detailed forecasts, our user-friendly interface empowers
+        you to make informed decisions based on reliable weather data. We are still building the website, it is not done
+        yet. Ideas are
+        coming to us day by day, so we are improving the use of the website day by day!
+    </p>
+    <p class="home-contact-text">If you want to contribute, please <a href="{{ url_for('contactus') }}"
+                                                                      class="home-contact">contact us</a> and provide
+        your email.</p>
+</div>
+
+{% include 'footer.html' %}

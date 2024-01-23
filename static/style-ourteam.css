@@ -1,0 +1,57 @@
+.team-section {
+    margin: 18px 0 28px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    margin-left: -43px;
+    margin-bottom: 23px;
+    text-decoration: underline;
+}
+
+.team-member {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.member-name {
+    font-size: 20px;
+    margin-top: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.member-role {
+    font-size: 16px;
+    color: #888;
+    margin-top: 5px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.ceo{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.ceo img{
+    width: 180px;
+    height: 180px;
+    border: 2px solid black;
+}
+
+.ceo member-name{
+    font-size: 24px;
+}
+
+.ceo member-role{
+    font-size: 18px;
+}

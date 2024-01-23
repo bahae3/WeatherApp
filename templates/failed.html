@@ -1,0 +1,9 @@
+{% include 'header.html' %}
+
+<div class="failed-content">
+    <h1 class="failed-header">Oops 🙄</h1>
+    <h3 class="failed-subheader">We couldn't find the city.</h3>
+    <h3 class="failed-subheader nr2">Or you might've entered a large number of days!</h3>
+    <a href="{{ url_for('home') }}">Try another one?</a>
+</div>
+{% include 'footer.html' %}
