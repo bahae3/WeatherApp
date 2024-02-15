@@ -13,6 +13,10 @@ nav{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+nav a{
+    margin: 10px 0 0 55px;
+}
+
 nav a img{
     width: 122px;
     height: auto;
